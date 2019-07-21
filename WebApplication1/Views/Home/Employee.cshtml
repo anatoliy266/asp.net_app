@@ -1,0 +1,59 @@
+﻿@model WebApplication1.Models.EmployeeModel
+
+@{
+    ViewData["Title"] = "Employee";
+}
+
+<h2>Employee</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+    @foreach (var item in Model.employee)
+    {
+        <div class="row">
+            <div class="col-sm-1">
+                @item.ID_Employee
+            </div>
+            <div class="col-sm-1">
+                @item.Family
+            </div>
+            <div class="col-sm-1">
+                @item.Name
+            </div>
+            <div class="col-sm-1">
+                @item.Surname
+            </div>
+            <div class="col-sm-1">
+                @item.Gender
+            </div>
+            <div class="col-sm-1">
+                @item.citizenship
+            </div>
+            <div class="col-sm-1">
+                @item.Address
+            </div>
+            <div class="col-sm-1">
+                @item.FamilyStatus
+            </div>
+            <div class="col-sm-1">
+                @item.Education
+            </div>
+        </div>
+        
+        <div class="col-sm-3">
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </div>
+    }
+</table>
